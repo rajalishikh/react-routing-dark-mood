@@ -21,9 +21,9 @@ const Navbar = () => {
     },[theme])
     return (
         
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100  shadow-xl">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost normal-case text-2xl gap-0 text-pink-500  font-bold">Byte<span className='text-blue-600'>Blaze</span></a>
   </div>
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
