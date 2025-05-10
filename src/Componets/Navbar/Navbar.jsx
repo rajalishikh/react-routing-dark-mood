@@ -9,9 +9,7 @@ const Navbar = () => {
         }else{
             setTheme("light")
         }
-        
-        
-        
+       
     }
     console.log(theme)
     useEffect(()=>{
