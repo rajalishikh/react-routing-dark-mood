@@ -4,12 +4,31 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Navbar from './Componets/Navbar/Navbar.jsx';
+import Blog from './Componets/Blogs/Blog.jsx';
+import BookMarks from './Componets/BookMarks/BookMarks.jsx';
+import Home from './Componets/Home/Home.jsx';
+import MainLayOut from './Componets/MainLayOut/MainLayOut.jsx';
 import './index.css';
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Navbar></Navbar> ,
+    element:<MainLayOut></MainLayOut> ,
+    children:[
+      {
+        path:"/",
+        element:<Home></Home>
+
+      },
+      
+      {
+        path:"/Blogs",
+        element:<Blog></Blog>
+      },
+      {
+        path:"/BookMarks",
+        element:<BookMarks></BookMarks>
+      }
+    ]
   },
 ]);
 
