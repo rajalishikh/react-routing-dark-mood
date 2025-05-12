@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
-        <div>
+        <div className="min-h-[calc(100vh-120px)] flex flex-col items-center justify-center relative ">
+          {/* main content  */}
             
-            <div className="hero bg-base-200 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] ">
+            <div className="hero  flex flex-col items-center justify-center  ">
               {/* content section  */}
              <div className="hero-content text-center">
-    <div className="max-w-md">
-      <h1 className="text-4xl font-bold">Welcome to <span>ByteBlaze</span></h1>
+    <div className="max-w-md absolute">
+      <div>
+        <h1 className="text-4xl font-bold">Welcome to <span>ByteBlaze</span></h1>
       <p className="py-6">
         It is a website where we can see the most popular technical details 
       </p>
@@ -29,9 +31,14 @@ const Home = () => {
    </Link>
 
       </div>
+      </div>
+      
     </div>
              </div>
-</div>
+            </div>
+            {/* image content  */}
+            <img className="w-full  absolute bottom-0" src={"../../../src/assets/wave (1).svg"} alt="" srcset="" />
+            
         </div>
     );
 };
