@@ -10,7 +10,7 @@ const Home = () => {
              <div className="hero-content text-center">
     <div className="max-w-md absolute">
       <div>
-        <h1 className="text-4xl font-bold">Welcome to <span>ByteBlaze</span></h1>
+        <h1 className="text-4xl font-bold">Welcome to <span className="bg-300% bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">ByteBlaze</span></h1>
       <p className="py-6">
         It is a website where we can see the most popular technical details 
       </p>
