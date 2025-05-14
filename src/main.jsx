@@ -4,6 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import BlogDetails from './Componets/BlogDetails/BlogDetails.Jsx';
 import Blog from './Componets/Blogs/Blog.jsx';
 import BookMarks from './Componets/BookMarks/BookMarks.jsx';
 import Home from './Componets/Home/Home.jsx';
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
         path:"/Blogs",
         element:<Blog></Blog>,
         loader:()=>fetch('https://dev.to/api/articles?per_page=20?top=7')
+      },
+      {
+        path:`/blog/:id`,
+        element:<BlogDetails></BlogDetails>,
+        loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`)
+       
       },
       {
         path:"/BookMarks",
