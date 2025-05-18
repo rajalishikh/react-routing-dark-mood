@@ -4,9 +4,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Author from './Componets/Author/Author.jsx';
 import BlogDetails from './Componets/BlogDetails/BlogDetails.Jsx';
 import Blog from './Componets/Blogs/Blog.jsx';
 import BookMarks from './Componets/BookMarks/BookMarks.jsx';
+import Content from './Componets/Content/Content.jsx';
 import Home from './Componets/Home/Home.jsx';
 import MainLayOut from './Componets/MainLayOut/MainLayOut.jsx';
 import './index.css';
@@ -29,7 +31,19 @@ const router = createBrowserRouter([
       {
         path:`/blog/:id`,
         element:<BlogDetails></BlogDetails>,
-        loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`)
+        loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}`),
+        children:[
+          {
+            index:true,
+            element:<Content></Content>
+          },
+          {
+            path:"author",
+            element:<Author></Author>
+            
+          }
+        ]
+        
        
       },
       {

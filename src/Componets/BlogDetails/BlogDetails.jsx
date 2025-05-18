@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const BlogDetails = () => {
     const loaderData=useLoaderData()
@@ -32,17 +32,24 @@ const BlogDetails = () => {
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
 			<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
 		</svg>
-		<span>Architecto</span>
+
+		<span>Content </span>
 	</Link>
-	<Link onClick={()=>setTab(1)} rel="noopener noreferrer" href="#" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 
+	<Link to={"author"} onClick={()=>setTab(1)} rel="noopener noreferrer" href="#" className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 
         ${tab ===1 ?"border border-b-0 ":"border-b"}dark:text-gray-600 dark:border-gray-600`} >
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
 			<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
 			<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
 		</svg>
-		<span>Corrupti</span>
+
+		<span>Author</span>
 	</Link>
+
+	
 </div>
+{/* Dynamic routes here it is  */}
+	<Outlet></Outlet>
+
 {/* tab section dynamic end    */}
 
 	<div>
