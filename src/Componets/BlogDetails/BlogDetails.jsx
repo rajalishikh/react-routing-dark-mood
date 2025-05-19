@@ -1,10 +1,12 @@
 import { useState } from "react";
+import Markdown from 'react-markdown';
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import rehypeRaw from "rehype-raw";
 
 const BlogDetails = () => {
     const loaderData=useLoaderData()
     console.log(loaderData)
-    const{cover_image,created_at,description,title,id}=loaderData
+    const{cover_image,created_at,description,title,id,body_html}=loaderData
     const [tab,setTab]=useState(0)
     return (
         <div>
@@ -45,6 +47,7 @@ const BlogDetails = () => {
 		<span>Author</span>
 	</Link>
 
+
 	
 </div>
 {/* Dynamic routes here it is  */}
@@ -73,7 +76,18 @@ const BlogDetails = () => {
 			</ul>
 		</div>
 	</div>
+	<Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+
+	<h2></h2>
 </div>
+
+<div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+	
+
+</div>
+
+
+
             
         </div>
     );
