@@ -1,11 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Card from "../Card/Card";
+import Spinear from "../Spinear/Spinear";
 
 const Blog = () => {
     const  bringData=useLoaderData()
+    const loader=useNavigation()
     
+    
+    if(loader.state ==="loading")return <Spinear></Spinear>
     return (
+        
         <div>
+           
+            
             <section className="dark:bg-gray-100 dark:text-gray-800">
                 {/* My main card  */}
 	<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
