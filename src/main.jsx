@@ -3,8 +3,10 @@ import {
   RouterProvider
 } from "react-router-dom";
 
+import { Toaster } from 'react-hot-toast';
 import './index.css';
 import { router } from './MainRoutes/Routes';
+
 
 
 
@@ -13,6 +15,10 @@ createRoot(document.getElementById('root')).render(
  
    
     
-    <RouterProvider router={router} />
+    <div>
+      <RouterProvider router={router} />
+      <Toaster></Toaster>
+    </div>
+    
   
 )

@@ -3,12 +3,16 @@ import { BsBookmarksFill } from "react-icons/bs";
 import Markdown from 'react-markdown';
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
+import { saveBlogs } from "../Utility/Utility";
 
 const BlogDetails = () => {
     const loaderData=useLoaderData()
     console.log(loaderData)
     const{cover_image,created_at,description,title,id,body_html}=loaderData
-    const [tab,setTab]=useState(0)
+    const [tab,setTab]=useState(0) 
+	const handleClick=(blog)=>{
+		saveBlogs(blog)
+	}
     return (
         <div>
             <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
@@ -47,7 +51,7 @@ const BlogDetails = () => {
 
 		<span>Author</span>
 	</Link>
-	<div className="bg-pink-500 bg-opacity-20 p-3 ml-3 rounded-full hover:bg-opacity-50  cursor-pointer">
+	<div onClick={()=>handleClick(loaderData)} className="bg-pink-500 bg-opacity-20 p-3 ml-3 rounded-full hover:bg-opacity-50  cursor-pointer hover:scale-110">
 	<BsBookmarksFill size={20} className="text-secondary" />
 	
 	</div>
