@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BsBookmarksFill } from "react-icons/bs";
 import Markdown from 'react-markdown';
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import rehypeRaw from "rehype-raw";
@@ -27,7 +28,7 @@ const BlogDetails = () => {
 		</div>
    </article>
 {/* tab section dynamic start   */}
-<div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+<div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800 ">
 	<Link onClick={()=>setTab(0)} rel="noopener noreferrer" href="#" 
     className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 
         ${tab ===0 ?"border border-b-0 ":"border-b"} dark:text-gray-600 dark:border-gray-600 `}>
@@ -46,6 +47,10 @@ const BlogDetails = () => {
 
 		<span>Author</span>
 	</Link>
+	<div className="bg-pink-500 bg-opacity-20 p-3 ml-3 rounded-full hover:bg-opacity-50  cursor-pointer">
+	<BsBookmarksFill size={20} className="text-secondary" />
+	
+	</div>
 
 
 	
